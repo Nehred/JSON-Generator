@@ -17,16 +17,15 @@
 var data=null;
 
 function generateJson() {
+  document.getElementById('json').value="";
   var json=[];
-  var inputs=document.querySelectorAll('input');
-  // for (var index in inputs) {
-  inputs.forEach(function(item, index, list) {
+  document.querySelectorAll('input').forEach(function(item, index, list) {
     var obj = {};
     obj.id = item.id;
     obj.value = item.value;
     json.push(obj);
   });
-  return JSON.stringify(json);
+  document.getElementById('json').value=JSON.stringify(json);
 }
 function parseJson() {
   var fields=document.getElementById('fields');
